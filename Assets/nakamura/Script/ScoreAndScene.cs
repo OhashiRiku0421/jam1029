@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ScoreAndScene : MonoBehaviour
 {
     [SerializeField, Header("スコア変数")] public int _score = 0;
-    static int scoreData;
+    public static int scoreData;
     [SerializeField,Header("制限時間の設定")] float _timeLimit = 30.9f;
     [SerializeField, Header("遷移先のシーン")] string sceneName;
     [SerializeField, Header("時間を表示するTest")] Text _timeText;
