@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Enemy : MonoBehaviour, IPointerClickHandler
+public class EnemyController : MonoBehaviour, IPointerClickHandler
 {
     EnemyGenerator _enemyG;
     Transform _spawnPos;
-    [SerializeField]ScoreAndScene _scoreAndScene;
+　　ScoreAndScene _scoreAndScene;
     [Header("スコア")]
     [SerializeField] int _score;
 
     private void Start()
     {
+        _scoreAndScene = GameObject.Find("scoremanager").GetComponent<ScoreAndScene>();
         StartCoroutine(A());
     }
     IEnumerator A()
@@ -23,14 +24,20 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         var go = eventData.pointerCurrentRaycast.gameObject;
-        if(go.name == "Enemy")
+        //if (go.name == "Enemy")
+        //{
+        //    Destroy(go);
+        //}
+        if(gameObject.tag == "Enemy")
         {
+            Debug.Log("aaa");
+            _scoreAndScene._score += _score;
             Destroy(go);
         }
     }
     private void OnDestroy()
     {
-        _scoreAndScene._score += _score;
+       
         _enemyG.EnemyDestroy(_spawnPos);
     }
     public void Set(EnemyGenerator eg, Transform t)

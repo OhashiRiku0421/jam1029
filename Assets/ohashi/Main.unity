@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 34281768}
   - component: {fileID: 34281767}
   - component: {fileID: 34281766}
+  - component: {fileID: 34281769}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34281769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34281765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1001 &111445707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,7 +359,7 @@ GameObject:
   - component: {fileID: 189605886}
   - component: {fileID: 189605885}
   m_Layer: 0
-  m_Name: scoremanage
+  m_Name: scoremanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,9 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee0184c54fad6943a509cfd6bea7464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 0
-  _timeLimit: 30.9
-  sceneName: 
+  _score: 5
+  _timeLimit: 5
+  sceneName: result
   _timeText: {fileID: 1702905797}
   _scoreText: {fileID: 1516757247}
   countDown: 3.9
@@ -842,6 +859,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5141424459696093376, guid: 38073c024db12dd4890b30e045ff6932, type: 3}
   m_PrefabInstance: {fileID: 1616915438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626527712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626527714}
+  - component: {fileID: 1626527713}
+  m_Layer: 0
+  m_Name: scenechange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1626527713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626527712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce2bf45a5230884682c0297b1ea02dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _changeScene: 
+--- !u!4 &1626527714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626527712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 837.8611, y: 574.4151, z: -16.203358}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702905795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1422,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: -2299756077550512443, guid: de3f11cc36a63f749bbb910efa88a1f4, type: 3}
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: -2299756077550512443, guid: de3f11cc36a63f749bbb910efa88a1f4, type: 3}
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: -7527393960786024026, guid: 0b943dec37447514782dd0df9f2b67dd, type: 3}
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.data[3]
+      value: 
+      objectReference: {fileID: -2299756077550512443, guid: de3f11cc36a63f749bbb910efa88a1f4, type: 3}
+    - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
+      propertyPath: _enemies.Array.data[4]
+      value: 
+      objectReference: {fileID: -7527393960786024026, guid: 0b943dec37447514782dd0df9f2b67dd, type: 3}
     - target: {fileID: 2982255762191181620, guid: 8baea8cc709029d4495e763a26151197, type: 3}
       propertyPath: _spawnPos.Array.data[0]
       value: 

@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour
 {
     [SerializeField] Transform[] _spawnPos = default;
-    [SerializeField] testEnemy[] _enemies;
+    [SerializeField] EnemyController[] _enemies;
     [SerializeField] int _maxPos;
     [SerializeField] float interval = 1f;
     List<Transform> _posList = new List<Transform>();
