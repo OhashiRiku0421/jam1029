@@ -11,10 +11,19 @@ public class Enemy : MonoBehaviour, IPointerClickHandler
     [Header("ÉXÉRÉA")]
     [SerializeField] int _score;
 
+    private void Start()
+    {
+        StartCoroutine(A());
+    }
+    IEnumerator A()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         var go = eventData.pointerCurrentRaycast.gameObject;
-        if(go.name == "a")
+        if(go.name == "Enemy")
         {
             Destroy(go);
         }
