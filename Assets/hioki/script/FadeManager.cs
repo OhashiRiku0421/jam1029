@@ -45,7 +45,7 @@ public class FadeManager : MonoBehaviour
 	private bool isFading = false;
 	/// <summary>フェード色</summary>
 	public Color fadeColor = Color.black;
-
+	[SerializeField] GameObject _panel;
 
 	public void Awake()
 	{
@@ -129,6 +129,7 @@ public class FadeManager : MonoBehaviour
 	private IEnumerator TransScene(string scene, float interval)
 	{
 		//だんだん暗く .
+		_panel.SetActive(true);
 		this.isFading = true;
 		float time = 0;
 		while (time <= interval)
@@ -149,7 +150,7 @@ public class FadeManager : MonoBehaviour
 			time += Time.deltaTime;
 			yield return 0;
 		}
-
+		_panel.SetActive(false);
 		this.isFading = false;
 	}
 }

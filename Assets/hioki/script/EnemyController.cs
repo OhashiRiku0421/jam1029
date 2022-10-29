@@ -10,15 +10,17 @@ public class EnemyController : MonoBehaviour, IPointerClickHandler
 　　ScoreAndScene _scoreAndScene;
     [Header("スコア")]
     [SerializeField] int _score;
+    AudioSource _audio;
 
     private void Start()
     {
+        _audio = GameObject.Find("a").GetComponent<AudioSource>();
         _scoreAndScene = GameObject.Find("scoremanager").GetComponent<ScoreAndScene>();
         StartCoroutine(A());
     }
     IEnumerator A()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -30,6 +32,8 @@ public class EnemyController : MonoBehaviour, IPointerClickHandler
         //}
         if(gameObject.tag == "Enemy")
         {
+            
+            _audio.Play();
             Debug.Log("aaa");
             _scoreAndScene._score += _score;
             Destroy(go);
